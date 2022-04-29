@@ -8,8 +8,11 @@ public class mainApp {
 		conexionMysql.conectar();
 //		conexionMysql.createDB("pepito");
 //		conexionMysql.dropDB("pepito");
-//		conexionMysql.createTable("pepe", "asd");
+//		conexionMysql.createTable("pepe", "juguetes", "nombre");
 //		conexionMysql.dropTable("pepe", "asd");
+//		conexionMysql.insertRow("pepe", "INSERT INTO juguetes (nombre) VALUES (\"bloques\");");
+//		conexionMysql.deleteRow("pepe", "juguetes", 11);
+//		conexionMysql.showRows("pepe", "juguetes", 13);
 		conexionMysql.desconectar();
 
 	}
