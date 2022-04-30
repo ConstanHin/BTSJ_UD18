@@ -13,6 +13,7 @@ public class mainApp {
 //		conexionMysql.insertRow("pepe", "INSERT INTO juguetes (nombre) VALUES (\"bloques\");");
 //		conexionMysql.deleteRow("pepe", "juguetes", 11);
 //		conexionMysql.showRows("pepe", "juguetes", 13);
+		conexionMysql.showRows("pepe", "juguetes");
 		conexionMysql.desconectar();
 
 	}

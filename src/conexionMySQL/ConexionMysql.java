@@ -181,7 +181,7 @@ public class ConexionMysql {
 	}
 	
 	/**
-	 * 
+	 * Show row by id
 	 * @param dbName
 	 * @param tableName
 	 * @param id
@@ -206,6 +206,41 @@ public class ConexionMysql {
 			System.out.println( rs.getString("ID") + rs.getString("nombre"));
 			
 			System.out.println("Showing rows with id: " + id);
+			
+		}catch (Exception e) {
+			System.out.println("Showing row/s fail");
+			System.out.println(e);
+		}
+	}
+	/**
+	 * Show all rows from a table
+	 * @param dbName
+	 * @param tableName
+	 * @param id
+	 */
+	public void showRows(String dbName, String tableName) {
+		try {
+			// Database use statement
+			
+			String queryDb = "USE " + dbName + ";";
+			
+			Statement stdb = this.connectionObj.createStatement();
+			stdb.executeUpdate(queryDb);
+			
+			// Insert into the table statement
+			String query = "SELECT * FROM " + tableName + " ;";
+			
+			Statement st = this.connectionObj.createStatement();
+			
+			ResultSet rs = st.executeQuery(query);
+			
+			while (rs.next()) {
+				System.out.println( "ID: " + rs.getString("ID") + " nombre " + rs.getString("nombre"));				
+			}
+			
+			rs.next();
+			
+			System.out.println("Rows read successful");
 			
 		}catch (Exception e) {
 			System.out.println("Showing row/s fail");
