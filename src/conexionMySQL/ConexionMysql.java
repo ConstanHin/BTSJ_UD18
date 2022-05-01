@@ -123,20 +123,14 @@ public class ConexionMysql {
 	}
 
 	/**
-	 * Insert a row in the table
+	 * Insert a row in the table. Requires to previously beeing connected and
+	 * using a database. 
 	 *  
 	 * @param dbName
 	 * @param inserQuery
 	 */
-	public void insertRow(String dbName, String insertQuery) {
+	public void insertRow(String insertQuery) {
 		try {
-			// Database use statement
-
-			String queryDb = "USE " + dbName + ";";
-
-			Statement stdb = this.connectionObj.createStatement();
-			stdb.executeUpdate(queryDb);
-
 			// Insert into the table statement
 			String query = insertQuery;
 
